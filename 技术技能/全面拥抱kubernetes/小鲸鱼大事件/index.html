@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="学习之前，先讲一个关于容器的故事。 2013-初出茅驴2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。 在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。 在虚拟机上部署会遇到一个痛点：云端虚拟机和本地环境不一致。所以，当时云计算服务pk的，就是谁能够更好地模拟本地服务器环境，就能够带来">
+<meta name="description" content="本文大部分内容来自极客时间张磊开设的课程《深入剖析Kubernetes》。学习之前，先讲一个关于容器的故事。 2013-初出茅驴2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。 在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。 在虚拟机上部署会遇到一个痛点：云端虚拟机和本地环境不一致">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小鲸鱼大事件">
 <meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/小鲸鱼大事件/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="学习之前，先讲一个关于容器的故事。 2013-初出茅驴2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。 在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。 在虚拟机上部署会遇到一个痛点：云端虚拟机和本地环境不一致。所以，当时云计算服务pk的，就是谁能够更好地模拟本地服务器环境，就能够带来">
+<meta property="og:description" content="本文大部分内容来自极客时间张磊开设的课程《深入剖析Kubernetes》。学习之前，先讲一个关于容器的故事。 2013-初出茅驴2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。 在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。 在虚拟机上部署会遇到一个痛点：云端虚拟机和本地环境不一致">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://dechykong.github.io/images/15639863515038.jpg">
-<meta property="og:updated_time" content="2019-07-24T16:41:10.622Z">
+<meta property="og:updated_time" content="2019-07-25T15:45:50.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小鲸鱼大事件">
-<meta name="twitter:description" content="学习之前，先讲一个关于容器的故事。 2013-初出茅驴2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。 在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。 在虚拟机上部署会遇到一个痛点：云端虚拟机和本地环境不一致。所以，当时云计算服务pk的，就是谁能够更好地模拟本地服务器环境，就能够带来">
+<meta name="twitter:description" content="本文大部分内容来自极客时间张磊开设的课程《深入剖析Kubernetes》。学习之前，先讲一个关于容器的故事。 2013-初出茅驴2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。 在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。 在虚拟机上部署会遇到一个痛点：云端虚拟机和本地环境不一致">
 <meta name="twitter:image" content="https://dechykong.github.io/images/15639863515038.jpg">
 
 
@@ -331,7 +331,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-25T00:41:10+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-25T23:45:50+08:00">
                 2019-07-25
               </time>
             
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.2k
+                  2.3k
                 </span>
               
 
@@ -432,7 +432,8 @@
       
 
       
-        <p><img src="/images/15639863515038.jpg" alt><br>学习之前，先讲一个关于容器的故事。</p>
+        <p><img src="/images/15639863515038.jpg" alt></p>
+<p>本文大部分内容来自极客时间张磊开设的课程《深入剖析Kubernetes》。<br>学习之前，先讲一个关于容器的故事。</p>
 <h1 id="2013-初出茅驴"><a href="#2013-初出茅驴" class="headerlink" title="2013-初出茅驴"></a>2013-初出茅驴</h1><p>2013年的后端技术领域，已经太久没有出现过令人兴奋的东西了。虚拟机和云计算已经成为了一种基础设置。</p>
 <p>在当时，主流用户的做法就是租一批AWS的虚拟机，然后像管理物理机一样，用脚本和手工的方式在这些机器上部署应用。</p>
 <p>在虚拟机上部署会遇到一个痛点：<strong>云端虚拟机和本地环境不一致。</strong>所以，当时云计算服务pk的，就是谁能够更好地模拟本地服务器环境，就能够带来更好的“上云”体验。而PaaS开源项目的出现，就是解决这个问题的最佳方案。</p>
@@ -445,7 +446,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build &quot;我的镜像&quot;</span><br></pre></td></tr></table></figure>
 
 <p>此外，Docker一开始给人一种“态度可掬”的诚恳姿态，服务的对象就是普通的开发者，而不是大公司，因此得到了最广大的开发者群体的拥护。这也是Docker能够一举走红的重要原因。</p>
-<h1 id="2014-2015-群雄并起"><a href="#2014-2015-群雄并起" class="headerlink" title="2014~2015-群雄并起"></a>2014~2015-群雄并起</h1><p>Docker项目的发展趋势一日千里，但公司管理成却有着一种无法释怀的担忧。他们心里明白，虽然Docker的项目备受追捧，但用户们最终想要部署的，还是他们的网站、服务、数据库甚至是云计算业务。</p>
+<h1 id="2014-群雄并起"><a href="#2014-群雄并起" class="headerlink" title="2014-群雄并起"></a>2014-群雄并起</h1><p>Docker项目的发展趋势一日千里，但公司管理成却有着一种无法释怀的担忧。他们心里明白，虽然Docker的项目备受追捧，但用户们最终想要部署的，还是他们的网站、服务、数据库甚至是云计算业务。</p>
 <p>这就意味着，只有那些能够能够为用户提供平台层能力的工具，能够交付用户真正价值的产品，用户才愿意付费。而这，也就是无所先驱们折戟沉沙的PaaS之路。如果无法提供平台层的能力，Docker无疑会被慢慢沦为幕后英雄。</p>
 <p>于是，Docker公司在2014年，就确定了必须重走Paas的道路，走上了平台化的发展方向。同年，Docker的好基友CoreOS与Docker停止合作，并发布了Rocket容器。</p>
 <p>Docker在2014年12月，发布了Swarm。Swarm最大的亮点就是，使用Docker项目容器管理的API来完成集群管理。</p>
@@ -454,6 +455,34 @@
 <li>收购Fig项目。Fig项目是在当时的git上热度堪比docker的明星。Fig在开发者面前，第一次提出了“容器编排”的概念，简单来说就是对容器的配置和容器间的关系进行编排配置。Fig项目也就是docker-compose的前身。</li>
 <li>收购SocketPlan项目。专门处理容器网络的项目。</li>
 <li>收购Tutum项目。专门用来做图形化管理界面和对外提供服务的项目。<br>一时之间，整个后端和云计算领域的聪明才俊都汇集在了这个小鲸鱼的周围，为Docker这个生态的蓬勃发展献上了自己的智慧。真所谓得道多助！</li>
+</ul>
+<p>除了这个异常繁荣精彩的Docker生态发展外，还有另一个势力在当时也是风头无两，这就是老牌集群管理项目Mesos和它背后的创业公司Mesosphere。</p>
+<p>虽然不能提供像Swarm那样的原生Docker API，Mesos社区却拥有一个独特的竞争力：超大规模集群的管理经验。</p>
+<blockquote>
+<p>早在几年之前，Mesos就已经通过万台节点的验证，2014年之后，又被广泛使用在eBay等大型互联网公司的生产环境中。</p>
+</blockquote>
+<p>而CoreOS的境地却有些尴尬，它的rkt容器完全打不开局面。同样处境不容乐观的还有RedHat，它现在只剩下OpenShift和经典的PaaS的牌可以打。跟Docker Swarm和Mesos完全不在同一个竞技水平上竞争。</p>
+<p>那么，事实真的就这样持续下去吗？</p>
+<p>2014年注定是一个神奇的年份。就在这一年的6月份，基础设置的翘楚Google公司突然发力，正式宣布一个名为Kubernetes项目诞生。而这个项目，不仅挽救了当时的CoreOS和RedHat，还如同当年Docker项目的横空出世一样，再一次改变了整个容器市场的格局。</p>
+<h1 id="2015-2016-尘埃落定"><a href="#2015-2016-尘埃落定" class="headerlink" title="2015~2016 尘埃落定"></a>2015~2016 尘埃落定</h1><p>Docker项目此时已经成为Docker公司的一个商业产品，而开源知识Docker公司吸引开发者群体的一个重要的手段。不过，这么多年来，开源社区的商业化其实都是类似的思路，无非是高不高调，心不心急的问题罢了。Docker公司在开源项目上的强势的话语权，渐渐令大多数的开发者不满意。于是，一场变革似乎在慢慢酝酿着。</p>
+<p>程序员就是这么桀骜不驯的群体，在开源的世界里，得开发者的天下。</p>
+<p>于是，Google、RedHat等开源基础设施领域的玩家们，共同牵头发起了一个CNCF(Cloud Native Computing Foundation)的基金会，也就是如今风头一时的云原生概念由来。这个基金会的目的，就是建立一个由开源基础设置领域厂商主导的、按照独立基金会方式运营的平台级社区，来对抗以Docker公司为核心的容器商业生态。</p>
+<p>CNCF基金会成功的做好了以下两件事：</p>
+<ul>
+<li>Kubernetes项目能够在容器编排领域取得足够大的竞争优势。</li>
+<li>CNCF社区以Kubernetes项目为核心，覆盖足够多的场景。</li>
+</ul>
+<p>就这样，Kubernetes项目在Github上的各项指标开始一骑绝尘，将Swarm项目远远地甩在了身后。</p>
+<p>在已经囊括了监控事实标准的Promutheus项目之后，CNCF社区迅速在成员项目中添加了Fluentd、OpenTracing、CNI等一系列容器生态的知名工具和项目。<br>看到了CNCF表现出来的巨大吸引力，大量的公司和开发者纷纷倒向了Kubernetes生态。</p>
+<p>而面对这样的竞争态势，Docker公司终于支撑不住，决定孤注一掷，在2016年，放弃了Swarm项目，将容器编排和集群管理功能全部内置到Docker项目中，放弃PaaS，退守后端，成为docker容器生态的幕后英雄。</p>
+<p>而此时，Kubernetes的应对策略则是反其道而行。开始在整个社区推进“民主化”的架构，即：<strong>从API到容器运行时的每一层，Kubernetes项目都为开发者暴露出了可以扩展的插件机制，鼓励用户通过代码的方式接入到Kubernetes项目的每一个阶段。</strong>很快，Kubernetes的生态变得异常繁荣。曾经纷纷扰扰的容器技术圈子，开始回归沉静。</p>
+<hr>
+<p><strong>总结：</strong></p>
+<ul>
+<li>容器技术的兴起，起源于PaaS技术的普及；</li>
+<li>Docker公司发布的Docker开源项目，具有里程碑意义。Docker项目通过“容器镜像”的方式，解决了当时打包难的问题。</li>
+<li>容器本身没有价值，更有价值的是“容器编排”，“容器编排”的纷争，以Kubernetes的胜利而告终。</li>
+<li>得开发者、得社区者的天下。</li>
 </ul>
 
       
@@ -630,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2013-初出茅驴"><span class="nav-number">1.</span> <span class="nav-text">2013-初出茅驴</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2014-2015-群雄并起"><span class="nav-number">2.</span> <span class="nav-text">2014~2015-群雄并起</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#2013-初出茅驴"><span class="nav-number">1.</span> <span class="nav-text">2013-初出茅驴</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2014-群雄并起"><span class="nav-number">2.</span> <span class="nav-text">2014-群雄并起</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2015-2016-尘埃落定"><span class="nav-number">3.</span> <span class="nav-text">2015~2016 尘埃落定</span></a></li></ol></div>
             
 
           </div>
@@ -671,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.9k</span>
+    <span title="Site words total count">8k</span>
   
 </div>
 
