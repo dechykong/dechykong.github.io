@@ -79,20 +79,17 @@
 
 
 
-<meta name="description" content="概述面对各种各样的复杂问题，其实你拆解它、解决它的思路和手段都是相通的。面对复杂且多变的世界，找到那些不变的东西，总是那么令人心安。 其实，解决问题，只有四个步骤：  第一步，明确和理解问题； 第二步，拆分和定位问题； 第三步，提出解决方案； 第四步，总结问题。  在这四步里，提出解决方案其实放得很靠后。第二步，也就是拆解和定位问题，反而是整套方法里最重要的。 如果你想要解决问题，你就必须用80%">
+<meta name="description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器障眼法先描述下使用了容器之后，能够达到一种效果：  它把你的应用装起来，应用和应用之间就因为有了边界而不至于互相干扰； 而被装进集装箱的应用也可以方便地搬来搬去。  以上的两种重要能力是怎么实现的呢?答案就是，使用了Linux提供的障眼法工具  Na">
 <meta property="og:type" content="article">
-<meta property="og:title" content="高手是如何解决问题的-解决复杂问题只需四步">
-<meta property="og:url" content="https://dechykong.github.io/系统思维/解决问题的框架/高手是如何解决问题的/index.html">
+<meta property="og:title" content="白话容器基础">
+<meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/白话容器基础/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="概述面对各种各样的复杂问题，其实你拆解它、解决它的思路和手段都是相通的。面对复杂且多变的世界，找到那些不变的东西，总是那么令人心安。 其实，解决问题，只有四个步骤：  第一步，明确和理解问题； 第二步，拆分和定位问题； 第三步，提出解决方案； 第四步，总结问题。  在这四步里，提出解决方案其实放得很靠后。第二步，也就是拆解和定位问题，反而是整套方法里最重要的。 如果你想要解决问题，你就必须用80%">
+<meta property="og:description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器障眼法先描述下使用了容器之后，能够达到一种效果：  它把你的应用装起来，应用和应用之间就因为有了边界而不至于互相干扰； 而被装进集装箱的应用也可以方便地搬来搬去。  以上的两种重要能力是怎么实现的呢?答案就是，使用了Linux提供的障眼法工具  Na">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://dechykong.github.io/images/15638059548300.jpg">
-<meta property="og:image" content="https://dechykong.github.io/images/15638064084148.jpg">
-<meta property="og:updated_time" content="2019-07-22T14:46:44.072Z">
+<meta property="og:updated_time" content="2019-07-25T16:05:53.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="高手是如何解决问题的-解决复杂问题只需四步">
-<meta name="twitter:description" content="概述面对各种各样的复杂问题，其实你拆解它、解决它的思路和手段都是相通的。面对复杂且多变的世界，找到那些不变的东西，总是那么令人心安。 其实，解决问题，只有四个步骤：  第一步，明确和理解问题； 第二步，拆分和定位问题； 第三步，提出解决方案； 第四步，总结问题。  在这四步里，提出解决方案其实放得很靠后。第二步，也就是拆解和定位问题，反而是整套方法里最重要的。 如果你想要解决问题，你就必须用80%">
-<meta name="twitter:image" content="https://dechykong.github.io/images/15638059548300.jpg">
+<meta name="twitter:title" content="白话容器基础">
+<meta name="twitter:description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器障眼法先描述下使用了容器之后，能够达到一种效果：  它把你的应用装起来，应用和应用之间就因为有了边界而不至于互相干扰； 而被装进集装箱的应用也可以方便地搬来搬去。  以上的两种重要能力是怎么实现的呢?答案就是，使用了Linux提供的障眼法工具  Na">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="https://dechykong.github.io/系统思维/解决问题的框架/高手是如何解决问题的/">
+  <link rel="canonical" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/白话容器基础/">
 
 
 
 
 
-  <title>高手是如何解决问题的-解决复杂问题只需四步 | 孔德聚的博客</title>
+  <title>白话容器基础 | 孔德聚的博客</title>
   
 
 
@@ -287,7 +284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/系统思维/解决问题的框架/高手是如何解决问题的/">
+    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/白话容器基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dechy">
@@ -304,7 +301,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">高手是如何解决问题的-解决复杂问题只需四步</h1>
+          <h1 class="post-title" itemprop="name headline">白话容器基础</h1>
         
 
         <div class="post-meta">
@@ -316,8 +313,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-22T22:26:42+08:00">
-                2019-07-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-25T23:51:22+08:00">
+                2019-07-25
               </time>
             
 
@@ -332,8 +329,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-22T22:46:44+08:00">
-                2019-07-22
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-26T00:05:53+08:00">
+                2019-07-26
               </time>
             
           </span>
@@ -351,8 +348,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/" itemprop="url" rel="index">
-                    <span itemprop="name">系统思维</span>
+                  <a href="/categories/技术技能/" itemprop="url" rel="index">
+                    <span itemprop="name">技术技能</span>
                   </a>
                 </span>
 
@@ -362,8 +359,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/解决问题的框架/" itemprop="url" rel="index">
-                    <span itemprop="name">解决问题的框架</span>
+                  <a href="/categories/技术技能/全面拥抱kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">全面拥抱kubernetes</span>
                   </a>
                 </span>
 
@@ -380,8 +377,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/系统思维/解决问题的框架/高手是如何解决问题的/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/系统思维/解决问题的框架/高手是如何解决问题的/" itemprop="commentCount"></span>
+                <a href="/技术技能/全面拥抱kubernetes/白话容器基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/技术技能/全面拥抱kubernetes/白话容器基础/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -408,7 +405,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  1.3k
+                  202
                 </span>
               
 
@@ -433,39 +430,16 @@
       
 
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>面对各种各样的复杂问题，其实你拆解它、解决它的思路和手段都是相通的。面对复杂且多变的世界，找到那些不变的东西，总是那么令人心安。</p>
-<p>其实，解决问题，只有四个步骤：</p>
+        <p>上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。</p>
+<h2 id="容器障眼法"><a href="#容器障眼法" class="headerlink" title="容器障眼法"></a>容器障眼法</h2><p>先描述下使用了容器之后，能够达到一种效果：</p>
 <ul>
-<li>第一步，明确和理解问题；</li>
-<li>第二步，拆分和定位问题；</li>
-<li>第三步，提出解决方案；</li>
-<li>第四步，总结问题。</li>
+<li>它把你的应用装起来，应用和应用之间就因为有了边界而不至于互相干扰；</li>
+<li>而被装进集装箱的应用也可以方便地搬来搬去。</li>
 </ul>
-<p>在这四步里，提出解决方案其实放得很靠后。第二步，也就是拆解和定位问题，反而是整套方法里最重要的。 如果你想要解决问题，你就必须用80%的精力去拆解和定位这个问题，剩下20%的精力去寻找解决方案，其实就足够了。</p>
-<p>因为，当问题被拆分得足够细、足够清晰的时候，你就会发现解决方案原来是这么明显，每个人都可以办得到。</p>
-<h1 id="明确及理解问题"><a href="#明确及理解问题" class="headerlink" title="明确及理解问题"></a>明确及理解问题</h1><p>遇到具体问题时，你一定要问自己“我遇到的问题本质到底是什么？</p>
-<p>第一步，你要找出对方关心的问题点。</p>
-<p>第二步是明确解决问题的目标。</p>
-<p>第三步就是要明确可以用来解决这个问题的资源。</p>
-<h1 id="定位和拆解问题"><a href="#定位和拆解问题" class="headerlink" title="定位和拆解问题"></a>定位和拆解问题</h1><p>什么是复杂问题呢？就是掺杂了多个维度和变量的问题。那什么是元问题？就是那些最本质、最细小的待解决的问题。</p>
-<p>复杂问题是不可直接解决的。你每天都在应对各种各样复杂问题的时候，其实都是在下意识地把这个复杂问题做拆解，然后再去一一地解决掉。</p>
-<h2 id="用公式思维拆解问题"><a href="#用公式思维拆解问题" class="headerlink" title="用公式思维拆解问题"></a>用公式思维拆解问题</h2><p>例如:<br>广告收入=展现量×点击率×每个点击的价格 。<br>煎饼摊的月利润 = 每天卖出的煎饼数量 × 每套煎饼的价格 × 每月工作天数 - 煎饼运营一个月的总成本；<br>同样，你可以找到计算深圳地铁一天的运客量，深圳的理发店数量的办法。<br>地铁每日的运客量 = 地铁数量 × 每条地铁装载的人数</p>
-<h2 id="拆解问题的推理模式"><a href="#拆解问题的推理模式" class="headerlink" title="拆解问题的推理模式"></a>拆解问题的推理模式</h2><p>一个叫假设驱动，一个叫构建问题树</p>
-<p>“假设驱动”的理念其实是从科研界沿用出来的，它的意思是，在应对复杂问题、寻找解决方案之前，我们先来做一个尽可能合理的假设。假设问题可能出现在某个细分的问题点上。<br>在假设驱动之后，拆解问题的第二个重点叫做搭建问题树结构。问题树又叫逻辑树、演绎树。它其实就是一个树状结构的东西，它的一个日常的应用其实我们每个人可能都看到过，就是思维导图。<br>这么做有两个好处： 一个是你会更容易找到问题所在；另一个是你可以根据拆解，把树上的问题都变成任务，清晰、没有遗漏地分配给其他人。</p>
-<p>那么，面对一个复杂问题，该怎么搭建它的问题树结构呢？一共可以总结成五个小步骤：</p>
-<p>第一，你要找出问题中存在的核心问题和起始问题。这点特别重要，之后的每一步都是基于这一点；<br>第二，要确定导致核心问题和起始问题的主要原因；<br>第三，要确定核心问题和起始问题导致的主要后果。第二点讲的是原因，现在是后果；<br>第四，根据以上的因果关系画出这个问题树；<br>第五，反复审查问题树。看看哪里还缺东西，进行最后的补充和修改。</p>
-<h2 id="如何把问题拆解到底"><a href="#如何把问题拆解到底" class="headerlink" title="如何把问题拆解到底"></a>如何把问题拆解到底</h2><p>其实，问题只需要拆解到我们能够处理的粒度就可以了。下面提供一个拆解问题的法则，是衡量拆分得是否合理的法则。</p>
-<p>MECE法则：相互独立，完全穷尽！<br><img src="/images/15638059548300.jpg" alt="麦肯锡的“MECE法则”-w623"></p>
-<h1 id="提出解决方案"><a href="#提出解决方案" class="headerlink" title="提出解决方案"></a>提出解决方案</h1><p>解决方案：如果上面已经拆分好了的话，解决方案就已经不言而喻了，这里也就没有描述的必要。</p>
-<h1 id="总结问题"><a href="#总结问题" class="headerlink" title="总结问题"></a>总结问题</h1><p>能够将复杂问题总结为一个结论，也是非常重要的。在做各种汇报的时候，如果没有个次重点，别人就不知道你在说什么。有时候，在跟别人讲解的时候，为了防止自己天马行空的思维，就会给自己列大纲。</p>
-<p>下面是使用金字塔思维来陈述结论。<br>我们要从结论不断地分拆，直到那个不可辩驳的事实；在跟别人表述的时候，我们需要自上而下地去表达。结论现行，再讲理由和事实。<br><img src="/images/15638064084148.jpg" alt></p>
-<hr>
-<p>总结：<br>解决问题是有套路的，我们可以使用固定的步骤去解决多变的问题。这些步骤分别是：</p>
+<p>以上的两种重要能力是怎么实现的呢?<br>答案就是，使用了Linux提供的障眼法工具</p>
 <ul>
-<li>第一步，明确和理解问题；</li>
-<li>第二步，拆分和定位问题；</li>
-<li>第三步，提出解决方案；</li>
-<li>第四步，总结问题。</li>
+<li>Namespace技术:用来修改进程的视图，让你只见树木不见深林。</li>
+<li>Cgroups技术：制造约束的手段，让你被困在狭隘的当下。</li>
 </ul>
 
       
@@ -506,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/系统思维/结构化思维/没有结构化思维，PPT都写不好/" rel="next" title="没有结构化思维，PPT都写不好">
-                <i class="fa fa-chevron-left"></i> 没有结构化思维，PPT都写不好
+              <a href="/技术技能/全面拥抱kubernetes/小鲸鱼大事件/" rel="next" title="小鲸鱼大事件">
+                <i class="fa fa-chevron-left"></i> 小鲸鱼大事件
               </a>
             
           </div>
@@ -515,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/领域行业/金融思维/学一点金融之宏观经济分析/" rel="prev" title="学一点金融之宏观经济分析">
-                学一点金融之宏观经济分析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -646,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#明确及理解问题"><span class="nav-number">2.</span> <span class="nav-text">明确及理解问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#定位和拆解问题"><span class="nav-number">3.</span> <span class="nav-text">定位和拆解问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用公式思维拆解问题"><span class="nav-number">3.1.</span> <span class="nav-text">用公式思维拆解问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆解问题的推理模式"><span class="nav-number">3.2.</span> <span class="nav-text">拆解问题的推理模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何把问题拆解到底"><span class="nav-number">3.3.</span> <span class="nav-text">如何把问题拆解到底</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#提出解决方案"><span class="nav-number">4.</span> <span class="nav-text">提出解决方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结问题"><span class="nav-number">5.</span> <span class="nav-text">总结问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#容器障眼法"><span class="nav-number">1.</span> <span class="nav-text">容器障眼法</span></a></li></ol></div>
             
 
           </div>
