@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。这种效果实在是太赞了，想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证">
+<meta name="description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证服务的持续和稳定。 这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="容器基础之障眼法">
 <meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/白话容器基础/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。这种效果实在是太赞了，想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证">
+<meta property="og:description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证服务的持续和稳定。 这">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://dechykong.github.io/images/15642927870572.jpg">
 <meta property="og:image" content="https://dechykong.github.io/images/15642934939354.jpg">
-<meta property="og:updated_time" content="2019-07-28T06:59:54.337Z">
+<meta property="og:updated_time" content="2019-07-28T10:35:09.059Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="容器基础之障眼法">
-<meta name="twitter:description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。这种效果实在是太赞了，想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证">
+<meta name="twitter:description" content="上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。 容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证服务的持续和稳定。 这">
 <meta name="twitter:image" content="https://dechykong.github.io/images/15642927870572.jpg">
 
 
@@ -332,7 +332,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-28T14:59:54+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-07-28T18:35:09+08:00">
                 2019-07-28
               </time>
             
@@ -434,13 +434,13 @@
 
       
         <p>上一篇文章讲到，“容器编排”是容器世界的“顶上战争”，是最有价值的部分。不过，在了解Kubernetes的容器编排之前，我们要先打好容器的基础。</p>
-<p><strong>容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。</strong>这种效果实在是太赞了，想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证服务的持续和稳定。</p>
-<p>这种令人兴奋的能力，究竟是怎么实现的呢?<br>答案就是今天的主题——Linux提供的障眼法工具：Namespace和Cgroups。</p>
+<p><strong>容器其实是一种沙盒技术，它把你的应用装起来，应用和应用之间是独立的，不会相互干扰。而被装进集装箱的应用也可以方便地搬来搬去。</strong>想象一种情况，当前的应用因为本地的内存不够挂了，然后容器就会在另一个合适的地方重启启动一个应用提供服务，保证服务的持续和稳定。</p>
+<p>这种能力，究竟是怎么实现的呢?<br>答案就是今天的主题——Linux提供的障眼法工具：Namespace和Cgroups。</p>
 <h2 id="从进程开始讲起"><a href="#从进程开始讲起" class="headerlink" title="从进程开始讲起"></a>从进程开始讲起</h2><p>我们编写的程序最终都要编译为机器认识的二进制，才能在机器上运行。在程序启动之前，它是静态的，安安静静的呆在磁盘中，但是当程序被执行起来了，它就从磁盘上的二进制文件，变成了计算机内存中的数据、寄存器里的值、堆栈中的指令、被打开的文件、以及各种设备的状态信息的集合。<strong>像这样一个程序运行起来后的计算机执行环境的综合，就是我们这一小节的主角：进程。</strong></p>
 <p><strong>而容器的核心功能，就是通过约束和修改进程的动态表现，从而为其创造出一个“边界”。</strong></p>
 <h2 id="容器的隔离之术：Namespace蒙蔽进程的双眼"><a href="#容器的隔离之术：Namespace蒙蔽进程的双眼" class="headerlink" title="容器的隔离之术：Namespace蒙蔽进程的双眼"></a>容器的隔离之术：Namespace蒙蔽进程的双眼</h2><p>Namespace技术是Linux用来修改进程的视图的工具，简单来说，就是蒙蔽进程的双眼，让进程以为自己看到的就是所有，让进程生活在自己的世界中。</p>
 <p>举个例子，我们用大名鼎鼎的docker run创建一个容器：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it image /bin/sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it ubuntu /bin/sh</span><br></pre></td></tr></table></figure>
 
 <p>-it告诉容器项目，在启动容器的时候，需要为我们分配一个文本输入输出环境，也就是TTY。这条指令的意思：请帮我启动一个容器，在容器里执行/bin/sh，并且为我分配一个命令行终端跟我这个容器交互。</p>
 <p>进入容器后，你执行以下ps命令，会发现：</p>
@@ -467,7 +467,7 @@
 
 <p><img src="/images/15642927870572.jpg" alt></p>
 <p>默认情况下，stats 命令会每隔 1 秒钟刷新一次输出的内容直到你按下 ctrl + c。下面是输出的主要内容：<br>[CONTAINER]：以短格式显示容器的 ID。<br>[CPU %]：CPU 的使用情况。<br>[MEM USAGE / LIMIT]：当前使用的内存和最大可以使用的内存。<br>[MEM %]：以百分比的形式显示内存使用情况。<br>[NET I/O]：网络 I/O 数据。<br>[BLOCK I/O]：磁盘 I/O 数据。<br>[PIDS]：PID 号。</p>
-<h2 id="容器技术的优缺点"><a href="#容器技术的优缺点" class="headerlink" title="容器技术的优缺点"></a>容器技术的优缺点</h2><p>谈到为“进程划分一个独立空间”的思想，相信你一定会联想到虚拟机。而且，你应该还看过一张虚拟机和容器的对比图。<br><img src="/images/15642934939354.jpg" alt><br>这幅图的左边，画出了虚拟机的工作原理。其中，名为 Hypervisor 的软件是虚拟机最主要的部分。它通过硬件虚拟化功能，模拟出了运行一个操作系统需要的各种硬件，比如 CPU、内存、I/O 设备等等。然后，它在这些虚拟的硬件上安装了一个新的操作系统，即 Guest OS。而APP就在这些Guest OS上面运行。</p>
+<h2 id="容器技术的优缺点"><a href="#容器技术的优缺点" class="headerlink" title="容器技术的优缺点"></a>容器技术的优缺点</h2><p>docker容器和虚拟机技术相比，有一定的优势和缺点，下面我们来盘点一下。<br><img src="/images/15642934939354.jpg" alt><br>这幅图的左边，画出了虚拟机的工作原理。其中，名为 Hypervisor 的软件是虚拟机最主要的部分。它通过硬件虚拟化功能，模拟出了运行一个操作系统需要的各种硬件，比如 CPU、内存、I/O 设备等等。然后，它在这些虚拟的硬件上安装了一个新的操作系统，即 Guest OS。而APP就在这些Guest OS上面运行。</p>
 <p>而右图，APP直接运行在宿主机的操作系统上，而docker容器更多的是旁路式的辅助和管理功能。</p>
 <p>根据实验，一个运行着 CentOS 的 KVM 虚拟机启动后，在不做优化的情况下，虚拟机自己就需要占用 100~200  MB 内存。此外，用户应用运行在虚拟机里面，它对宿主机操作系统的调用就不可避免地要经过虚拟化软件的拦截和处理，这本身又是一层性能损耗，尤其对计算资源、网络和磁盘 I/O 的损耗非常大。</p>
 <p>而相比之下，容器化后的用户应用，却依然还是一个宿主机上的普通进程，这就意味着这些因为虚拟化而带来的性能损耗都是不存在的；而另一方面，使用 Namespace 作为隔离手段的容器并不需要单独的 Guest OS，这就使得容器额外的资源占用几乎可以忽略不计。</p>
