@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://dechykong.github.io/images/15648465571715.jpg">
 <meta property="og:image" content="https://dechykong.github.io/images/15648471736286.jpg">
 <meta property="og:image" content="https://dechykong.github.io/images/15648765778975.jpg">
-<meta property="og:updated_time" content="2019-08-04T07:36:21.425Z">
+<meta property="og:updated_time" content="2019-08-04T07:42:27.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识Kubernetes">
 <meta name="twitter:description" content="一个正在运行的 Linux 容器，其实可以被“一分为二”地看待：  一组联合挂载在 /var/lib/docker/aufs/mnt 上的 rootfs，这一部分我们称为“容器镜像”（Container Image），是容器的静态视图； 一个由 Namespace+Cgroups 构成的隔离环境，这一部分我们称为“容器运行时”（Container Runtime），是容器的动态视图。  从一个开发">
@@ -333,7 +333,7 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-04T15:36:21+08:00">
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-04T15:42:27+08:00">
                 2019-08-04
               </time>
             
@@ -440,7 +440,7 @@
 <li>一个由 Namespace+Cgroups 构成的隔离环境，这一部分我们称为“容器运行时”（Container Runtime），是容器的动态视图。</li>
 </ul>
 <p>从一个开发者和单一的容器镜像，到无数开发者和庞大的容器集群，容器技术实现了从“容器”到“容器云”的飞跃，标志着它真正得到了市场和生态的认可。</p>
-<p><strong>而能够定义容器组织和管理规范的“容器编排”技术，则当仁不让地坐上了容器技术领域的“头把交椅”。</strong></p>
+<p><strong>而能够定义容器组织和管理规范的“容器编排”技术，则当仁不让地坐上了容器技术领域的“头把交椅”。而Kubernetes则是坐上了头把交椅的老大。</strong></p>
 <h1 id="Kubernetes的技术起源"><a href="#Kubernetes的技术起源" class="headerlink" title="Kubernetes的技术起源"></a>Kubernetes的技术起源</h1><p>Kubernete技术理论基础得益于谷歌的Borg系统。Borg 系统，一直以来都被誉为 Google 公司内部最强大的“秘密武器”。虽然略显夸张，但这个说法倒不算是吹牛。</p>
 <p>因为，Borg 要承担的责任，是承载 Google 公司整个基础设施的核心依赖。在 Google 公司已经公开发表的基础设施体系论文中，Borg 项目当仁不让地位居整个基础设施技术栈的最底层。</p>
 <p><img src="/images/15648465571715.jpg" alt></p>
@@ -463,7 +463,7 @@
 <li>处理集群中的各种任务之间存在着各种各样的关系。</li>
 <li>处理应用运行形态的问题。</li>
 </ul>
-<p>我们可以通过下面这幅图，按照这幅图的线索，来探索下Kubernetes的功能严禁路线。<br> <img src="/images/15648765778975.jpg" alt></p>
+<p>我们可以通过下面这幅图，按照这幅图的线索，来探索下Kubernetes的功能演进路线。<br> <img src="/images/15648765778975.jpg" alt></p>
 <h2 id="处理应用之间的关系"><a href="#处理应用之间的关系" class="headerlink" title="处理应用之间的关系"></a>处理应用之间的关系</h2><ul>
 <li>首先遇到了容器间“紧密协作”关系的难题，于是就扩展到了 Pod；Pod之间可共享网络和存储等资源。</li>
 <li>有了 Pod 之后，我们希望能一次启动多个应用的实例，这样就需要 Deployment 这个 Pod 的多实例管理器；</li>
