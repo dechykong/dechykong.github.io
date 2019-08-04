@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta name="description" content="搭建虚拟机详细可以参考这篇博客：https://blog.csdn.net/yjk13703623757/article/details/70040797 1、安装virtualbox下载地址：https://www.virtualbox.org/wiki/Downloads mac机器上安装如果报错，需要到 系统偏好设置下-&amp;gt;安全与隐私-&amp;gt;通用 下，允许程序写入文件。然后再重新安装。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个框架，四个原则">
-<meta property="og:url" content="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/index.html">
+<meta property="og:title" content="使用vagrant搭建虚拟机">
+<meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/使用vagrant搭建虚拟机/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta property="og:description" content="搭建虚拟机详细可以参考这篇博客：https://blog.csdn.net/yjk13703623757/article/details/70040797 1、安装virtualbox下载地址：https://www.virtualbox.org/wiki/Downloads mac机器上安装如果报错，需要到 系统偏好设置下-&amp;gt;安全与隐私-&amp;gt;通用 下，允许程序写入文件。然后再重新安装。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T15:05:28.110Z">
+<meta property="og:image" content="https://dechykong.github.io/images/15648027929587.jpg">
+<meta property="og:updated_time" content="2019-08-03T14:54:35.109Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个框架，四个原则">
-<meta name="twitter:description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta name="twitter:title" content="使用vagrant搭建虚拟机">
+<meta name="twitter:description" content="搭建虚拟机详细可以参考这篇博客：https://blog.csdn.net/yjk13703623757/article/details/70040797 1、安装virtualbox下载地址：https://www.virtualbox.org/wiki/Downloads mac机器上安装如果报错，需要到 系统偏好设置下-&amp;gt;安全与隐私-&amp;gt;通用 下，允许程序写入文件。然后再重新安装。">
+<meta name="twitter:image" content="https://dechykong.github.io/images/15648027929587.jpg">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/">
+  <link rel="canonical" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/使用vagrant搭建虚拟机/">
 
 
 
 
 
-  <title>一个框架，四个原则 | 孔德聚的博客</title>
+  <title>使用vagrant搭建虚拟机 | 孔德聚的博客</title>
   
 
 
@@ -284,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/">
+    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/使用vagrant搭建虚拟机/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dechy">
@@ -301,7 +303,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一个框架，四个原则</h1>
+          <h1 class="post-title" itemprop="name headline">使用vagrant搭建虚拟机</h1>
         
 
         <div class="post-meta">
@@ -313,8 +315,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-21T00:53:17+08:00">
-                2019-07-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-27T19:04:08+08:00">
+                2019-07-27
               </time>
             
 
@@ -329,8 +331,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-22T23:05:28+08:00">
-                2019-07-22
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-03T22:54:35+08:00">
+                2019-08-03
               </time>
             
           </span>
@@ -348,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/" itemprop="url" rel="index">
-                    <span itemprop="name">系统思维</span>
+                  <a href="/categories/技术技能/" itemprop="url" rel="index">
+                    <span itemprop="name">技术技能</span>
                   </a>
                 </span>
 
@@ -359,8 +361,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/10x程序员工作法/" itemprop="url" rel="index">
-                    <span itemprop="name">10x程序员工作法</span>
+                  <a href="/categories/技术技能/全面拥抱kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">全面拥抱kubernetes</span>
                   </a>
                 </span>
 
@@ -377,8 +379,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/系统思维/10x程序员工作法/10x程序员工作法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/系统思维/10x程序员工作法/10x程序员工作法/" itemprop="commentCount"></span>
+                <a href="/技术技能/全面拥抱kubernetes/使用vagrant搭建虚拟机/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/技术技能/全面拥抱kubernetes/使用vagrant搭建虚拟机/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +407,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  183
+                  577
                 </span>
               
 
@@ -430,20 +432,41 @@
       
 
       
-        <h1 id="一个思考框架"><a href="#一个思考框架" class="headerlink" title="一个思考框架"></a>一个思考框架</h1><ul>
-<li>Where  are we?            →  现状</li>
-<li>Where are we going? → 目标</li>
-<li>How can we get there? → 实现路径</li>
-</ul>
-<p>以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。</p>
-<h1 id="四个思考原则"><a href="#四个思考原则" class="headerlink" title="四个思考原则"></a>四个思考原则</h1><ul>
-<li>以终为始 ，确定好真实目标。</li>
-<li>任务分解，找到实施路径。</li>
-<li>沟通反馈，解决与人打交道出现的问题。</li>
-<li>自动化，解决与机器打交道出现的问题。</li>
-</ul>
-<hr>
-<p>总结：<br>一个框架，四个原则是对10倍程序员工作法的高度抽象。后面的文章会对这些内容进行补充。</p>
+        <h1 id="搭建虚拟机"><a href="#搭建虚拟机" class="headerlink" title="搭建虚拟机"></a>搭建虚拟机</h1><p>详细可以参考这篇博客：<a href="https://blog.csdn.net/yjk13703623757/article/details/70040797" target="_blank" rel="noopener">https://blog.csdn.net/yjk13703623757/article/details/70040797</a></p>
+<h2 id="1、安装virtualbox"><a href="#1、安装virtualbox" class="headerlink" title="1、安装virtualbox"></a>1、安装virtualbox</h2><p>下载地址：<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a></p>
+<p>mac机器上安装如果报错，需要到 系统偏好设置下-&gt;安全与隐私-&gt;通用 下，允许程序写入文件。然后再重新安装。</p>
+<h2 id="2、安装vagrant"><a href="#2、安装vagrant" class="headerlink" title="2、安装vagrant"></a>2、安装vagrant</h2><p>下载地址：<a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">https://www.vagrantup.com/downloads.html</a></p>
+<p>下载安装后，在控制台上查看是否安装成功。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant -v</span><br><span class="line">Vagrant 2.2.5</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、选择虚拟机的box"><a href="#3、选择虚拟机的box" class="headerlink" title="3、选择虚拟机的box"></a>3、选择虚拟机的box</h2><p>获取虚拟机box的方式有两种，在线和离线。<br>在线的方式，可以在<a href="https://app.vagrantup.com/boxes/search" target="_blank" rel="noopener">https://app.vagrantup.com/boxes/search</a> 上面找到自己想要启动的虚拟机，然后按照指示在Vagrantfile上面进行配置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vagrant.configure(&quot;2&quot;) do |config|</span><br><span class="line">  config.vm.box = &quot;bento/centos-7.4&quot;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用离线的方式下载好虚拟机的box，然后通过</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant box add centos.box    # 添加进去。</span><br><span class="line">$ vagrant box list              #查看已经导进去的box</span><br><span class="line">bento/centos-7.4 (virtualbox, 0)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、启动虚拟机"><a href="#4、启动虚拟机" class="headerlink" title="4、启动虚拟机"></a>4、启动虚拟机</h2><p>(1)首先，创建一个目录，在目录上创建Vagrantfile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant init bento/centos-7.4 </span><br><span class="line">$ ls</span><br><span class="line">Vagrantfile</span><br></pre></td></tr></table></figure>
+
+<p>Vagrantfile的内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vagrant.configure(&quot;2&quot;) do |config|</span><br><span class="line">config.vm.box = &quot;bento/centos-7.4&quot;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p>(2) 启动虚拟机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant up</span><br></pre></td></tr></table></figure>
+
+<p>(3) 登陆虚拟机：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant ssh</span><br></pre></td></tr></table></figure>
+
+<p>至此，虚拟机就启动成功了。</p>
+<p>此外，可以对虚拟机的网络，主机名称，内存等进行进一步的配置，修改Vagrantfile。</p>
+<p>我搭建了两台虚拟机，一台是master，一台note1，主要是名称和绑定的静态ip不一样罢了。</p>
+<p><strong>master 虚拟机配置</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Vagrant.configure(2) do |config|</span><br><span class="line">  config.vm.box = &quot;bento/centos-7.4&quot;</span><br><span class="line">  config.vm.box_check_update = false</span><br><span class="line">  ### node1</span><br><span class="line">  config.vm.define &quot;master&quot; do |node|</span><br><span class="line">      node.vm.hostname = &quot;master&quot;</span><br><span class="line">      node.vm.network &quot;private_network&quot;, ip: &quot;172.168.1.10&quot;</span><br><span class="line">      config.vm.provider &quot;virtualbox&quot; do |vb|</span><br><span class="line">        # Use VBoxManage to customize the VM.</span><br><span class="line">        vb.customize [&quot;modifyvm&quot;, :id, &quot;--memory&quot;, &quot;2048&quot;]</span><br><span class="line">      end</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<p><strong>note1虚拟机配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Vagrant.configure(2) do |config|</span><br><span class="line">  config.vm.box = &quot;bento/centos-7.4&quot;</span><br><span class="line">  config.vm.box_check_update = false</span><br><span class="line">  ### node1</span><br><span class="line">  config.vm.define &quot;node1&quot; do |node|</span><br><span class="line">      node.vm.hostname = &quot;node1&quot;</span><br><span class="line">      node.vm.network &quot;private_network&quot;, ip: &quot;172.168.1.11&quot;</span><br><span class="line">      config.vm.provider &quot;virtualbox&quot; do |vb|</span><br><span class="line">        # Use VBoxManage to customize the VM.</span><br><span class="line">        vb.customize [&quot;modifyvm&quot;, :id, &quot;--memory&quot;, &quot;2048&quot;]</span><br><span class="line">      end</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+<h1 id="Vagrant命令"><a href="#Vagrant命令" class="headerlink" title="Vagrant命令"></a>Vagrant命令</h1><p>这些命令需要进入到Vagrantfile文件所在的目录执行。<br><img src="/images/15648027929587.jpg" alt="-w865"></p>
 
       
     </div>
@@ -483,14 +506,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/技术技能/全面拥抱kubernetes/白话容器基础/" rel="next" title="容器基础之障眼法">
+                <i class="fa fa-chevron-left"></i> 容器基础之障眼法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/技术技能/Linux运维/SourceCRT使用sftp上传下载文件/" rel="prev" title="SourceCRT使用sftp上传下载文件">
-                SourceCRT使用sftp上传下载文件 <i class="fa fa-chevron-right"></i>
+              <a href="/技术技能/全面拥抱kubernetes/深入理解容器镜像/" rel="prev" title="深入理解容器镜像">
+                深入理解容器镜像 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一个思考框架"><span class="nav-number">1.</span> <span class="nav-text">一个思考框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四个思考原则"><span class="nav-number">2.</span> <span class="nav-text">四个思考原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建虚拟机"><span class="nav-number">1.</span> <span class="nav-text">搭建虚拟机</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、安装virtualbox"><span class="nav-number">1.1.</span> <span class="nav-text">1、安装virtualbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、安装vagrant"><span class="nav-number">1.2.</span> <span class="nav-text">2、安装vagrant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、选择虚拟机的box"><span class="nav-number">1.3.</span> <span class="nav-text">3、选择虚拟机的box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、启动虚拟机"><span class="nav-number">1.4.</span> <span class="nav-text">4、启动虚拟机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Vagrant命令"><span class="nav-number">2.</span> <span class="nav-text">Vagrant命令</span></a></li></ol></div>
             
 
           </div>

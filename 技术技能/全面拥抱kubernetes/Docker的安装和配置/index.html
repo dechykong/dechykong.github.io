@@ -79,17 +79,20 @@
 
 
 
-<meta name="description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta name="description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个框架，四个原则">
-<meta property="og:url" content="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/index.html">
+<meta property="og:title" content="Docker的安装和配置">
+<meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/Docker的安装和配置/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta property="og:description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T15:05:28.110Z">
+<meta property="og:image" content="https://dechykong.github.io/images/15648176535161.jpg">
+<meta property="og:image" content="https://dechykong.github.io/images/15648194363608.jpg">
+<meta property="og:updated_time" content="2019-08-03T14:55:30.281Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个框架，四个原则">
-<meta name="twitter:description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta name="twitter:title" content="Docker的安装和配置">
+<meta name="twitter:description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
+<meta name="twitter:image" content="https://dechykong.github.io/images/15648176535161.jpg">
 
 
 
@@ -119,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/">
+  <link rel="canonical" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/Docker的安装和配置/">
 
 
 
 
 
-  <title>一个框架，四个原则 | 孔德聚的博客</title>
+  <title>Docker的安装和配置 | 孔德聚的博客</title>
   
 
 
@@ -284,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/">
+    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/Docker的安装和配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dechy">
@@ -301,7 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一个框架，四个原则</h1>
+          <h1 class="post-title" itemprop="name headline">Docker的安装和配置</h1>
         
 
         <div class="post-meta">
@@ -313,8 +316,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-21T00:53:17+08:00">
-                2019-07-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-29T19:04:08+08:00">
+                2019-07-29
               </time>
             
 
@@ -329,8 +332,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-22T23:05:28+08:00">
-                2019-07-22
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-03T22:55:30+08:00">
+                2019-08-03
               </time>
             
           </span>
@@ -348,8 +351,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/" itemprop="url" rel="index">
-                    <span itemprop="name">系统思维</span>
+                  <a href="/categories/技术技能/" itemprop="url" rel="index">
+                    <span itemprop="name">技术技能</span>
                   </a>
                 </span>
 
@@ -359,8 +362,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/10x程序员工作法/" itemprop="url" rel="index">
-                    <span itemprop="name">10x程序员工作法</span>
+                  <a href="/categories/技术技能/全面拥抱kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">全面拥抱kubernetes</span>
                   </a>
                 </span>
 
@@ -377,8 +380,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/系统思维/10x程序员工作法/10x程序员工作法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/系统思维/10x程序员工作法/10x程序员工作法/" itemprop="commentCount"></span>
+                <a href="/技术技能/全面拥抱kubernetes/Docker的安装和配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/技术技能/全面拥抱kubernetes/Docker的安装和配置/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +408,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  183
+                  412
                 </span>
               
 
@@ -430,20 +433,36 @@
       
 
       
-        <h1 id="一个思考框架"><a href="#一个思考框架" class="headerlink" title="一个思考框架"></a>一个思考框架</h1><ul>
-<li>Where  are we?            →  现状</li>
-<li>Where are we going? → 目标</li>
-<li>How can we get there? → 实现路径</li>
-</ul>
-<p>以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。</p>
-<h1 id="四个思考原则"><a href="#四个思考原则" class="headerlink" title="四个思考原则"></a>四个思考原则</h1><ul>
-<li>以终为始 ，确定好真实目标。</li>
-<li>任务分解，找到实施路径。</li>
-<li>沟通反馈，解决与人打交道出现的问题。</li>
-<li>自动化，解决与机器打交道出现的问题。</li>
-</ul>
-<hr>
-<p>总结：<br>一个框架，四个原则是对10倍程序员工作法的高度抽象。后面的文章会对这些内容进行补充。</p>
+        <h1 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h1><p>一般来说，安装docker只需要下面两步即可。<br>在执行命令之前，先切花到root用户。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd       #修改密码</span><br><span class="line">$ su - root         #切换到root用户</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装docker-ce"><a href="#安装docker-ce" class="headerlink" title="安装docker-ce"></a>安装docker-ce</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">yum-config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum install -y docker-ce</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h1 id="相关配置（可忽略）"><a href="#相关配置（可忽略）" class="headerlink" title="相关配置（可忽略）"></a>相关配置（可忽略）</h1><h2 id="禁用SElinux"><a href="#禁用SElinux" class="headerlink" title="禁用SElinux"></a>禁用SElinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &apos;s/SELINUX=enforcing/SELINUX=disabled/g&apos; /etc/selinux/config</span><br></pre></td></tr></table></figure>
+
+<h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service &amp;&amp; systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="内核优化"><a href="#内核优化" class="headerlink" title="内核优化"></a>内核优化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;&gt; /etc/sysctl.conf&lt;&lt;EOF</span><br><span class="line">net.ipv4.ip_forward=1</span><br><span class="line">net.bridge.bridge-nf-call-iptables=1</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables=1</span><br><span class="line">net.ipv4.neigh.default.gc_thresh1=4096</span><br><span class="line">net.ipv4.neigh.default.gc_thresh2=6144</span><br><span class="line">net.ipv4.neigh.default.gc_thresh3=8192</span><br><span class="line">EOF</span><br><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置证书"><a href="#配置证书" class="headerlink" title="配置证书"></a>配置证书</h2><p>公司内网仓库需要配置证书才允许访问。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker/certs.d/e-registry.yfb.sunline.cn</span><br><span class="line">curl -L http://e-proxy.yfb.sunline.cn/repos/registry/e-ca.crt &gt; /etc/docker/certs.d/e-registry.yfb.sunline.cn/ca.crt</span><br></pre></td></tr></table></figure>
+
+<h2 id="docker的deamon配置"><a href="#docker的deamon配置" class="headerlink" title="docker的deamon配置"></a>docker的deamon配置</h2><p>配置镜像仓库的拉取地址等相关信息。</p>
+<p>创建文件：/etc/docker/daemon.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://c6s6uk2t.mirror.aliyuncs.com&quot;,&quot;https://e-registry.yfb.sunline.cn&quot;],</span><br><span class="line">  &quot;insecure-registries&quot; : [&quot;e-registry.yfb.sunline.cn&quot;],</span><br><span class="line">  &quot;max-concurrent-downloads&quot;: 3,</span><br><span class="line">  &quot;max-concurrent-uploads&quot;: 5,</span><br><span class="line">  &quot;storage-driver&quot;: &quot;overlay2&quot;,</span><br><span class="line">  &quot;storage-opts&quot;: [&quot;overlay2.override_kernel_check=true&quot;],</span><br><span class="line">  &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">  &quot;log-opts&quot;: &#123;</span><br><span class="line">    &quot;max-size&quot;: &quot;100m&quot;,</span><br><span class="line">    &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>最后，相关配置完成后，记得重启docker</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<p>查看是否安装完毕：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/15648176535161.jpg" alt="-w515"></p>
+<h1 id="运行nginx容器，查看是否安装正确"><a href="#运行nginx容器，查看是否安装正确" class="headerlink" title="运行nginx容器，查看是否安装正确"></a>运行nginx容器，查看是否安装正确</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8080:80 nginx</span><br></pre></td></tr></table></figure>
+
+<p>访问容器的ip+监听端口：<a href="http://172.168.1.10:8080/" target="_blank" rel="noopener">http://172.168.1.10:8080/</a><br><img src="/images/15648194363608.jpg" alt="-w632"><br>代表启动成功。</p>
 
       
     </div>
@@ -483,14 +502,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/技术技能/全面拥抱kubernetes/深入理解容器镜像/" rel="next" title="深入理解容器镜像">
+                <i class="fa fa-chevron-left"></i> 深入理解容器镜像
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/技术技能/Linux运维/SourceCRT使用sftp上传下载文件/" rel="prev" title="SourceCRT使用sftp上传下载文件">
-                SourceCRT使用sftp上传下载文件 <i class="fa fa-chevron-right"></i>
+              <a href="/技术技能/全面拥抱kubernetes/初识kubernate的架构体系/" rel="prev" title="初识Kubernetes">
+                初识Kubernetes <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -628,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一个思考框架"><span class="nav-number">1.</span> <span class="nav-text">一个思考框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四个思考原则"><span class="nav-number">2.</span> <span class="nav-text">四个思考原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker的安装"><span class="nav-number">1.</span> <span class="nav-text">Docker的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装docker-ce"><span class="nav-number">1.1.</span> <span class="nav-text">安装docker-ce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动docker"><span class="nav-number">1.2.</span> <span class="nav-text">启动docker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关配置（可忽略）"><span class="nav-number">2.</span> <span class="nav-text">相关配置（可忽略）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用SElinux"><span class="nav-number">2.1.</span> <span class="nav-text">禁用SElinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭防火墙"><span class="nav-number">2.2.</span> <span class="nav-text">关闭防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内核优化"><span class="nav-number">2.3.</span> <span class="nav-text">内核优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置证书"><span class="nav-number">2.4.</span> <span class="nav-text">配置证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker的deamon配置"><span class="nav-number">2.5.</span> <span class="nav-text">docker的deamon配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行nginx容器，查看是否安装正确"><span class="nav-number">3.</span> <span class="nav-text">运行nginx容器，查看是否安装正确</span></a></li></ol></div>
             
 
           </div>

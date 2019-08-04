@@ -79,17 +79,21 @@
 
 
 
-<meta name="description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta name="description" content="一个正在运行的 Linux 容器，其实可以被“一分为二”地看待：  一组联合挂载在 /var/lib/docker/aufs/mnt 上的 rootfs，这一部分我们称为“容器镜像”（Container Image），是容器的静态视图； 一个由 Namespace+Cgroups 构成的隔离环境，这一部分我们称为“容器运行时”（Container Runtime），是容器的动态视图。  从一个开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一个框架，四个原则">
-<meta property="og:url" content="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/index.html">
+<meta property="og:title" content="初识Kubernetes">
+<meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/初识kubernate的架构体系/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta property="og:description" content="一个正在运行的 Linux 容器，其实可以被“一分为二”地看待：  一组联合挂载在 /var/lib/docker/aufs/mnt 上的 rootfs，这一部分我们称为“容器镜像”（Container Image），是容器的静态视图； 一个由 Namespace+Cgroups 构成的隔离环境，这一部分我们称为“容器运行时”（Container Runtime），是容器的动态视图。  从一个开发">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-22T15:05:28.110Z">
+<meta property="og:image" content="https://dechykong.github.io/images/15648465571715.jpg">
+<meta property="og:image" content="https://dechykong.github.io/images/15648471736286.jpg">
+<meta property="og:image" content="https://dechykong.github.io/images/15648765778975.jpg">
+<meta property="og:updated_time" content="2019-08-04T07:36:21.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个框架，四个原则">
-<meta name="twitter:description" content="一个思考框架 Where  are we?            →  现状 Where are we going? → 目标 How can we get there? → 实现路径  以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。 四个思考原则 以终为始 ，确定好真实目标。 任务分解，找到实施路径。 沟通反馈，解决">
+<meta name="twitter:title" content="初识Kubernetes">
+<meta name="twitter:description" content="一个正在运行的 Linux 容器，其实可以被“一分为二”地看待：  一组联合挂载在 /var/lib/docker/aufs/mnt 上的 rootfs，这一部分我们称为“容器镜像”（Container Image），是容器的静态视图； 一个由 Namespace+Cgroups 构成的隔离环境，这一部分我们称为“容器运行时”（Container Runtime），是容器的动态视图。  从一个开发">
+<meta name="twitter:image" content="https://dechykong.github.io/images/15648465571715.jpg">
 
 
 
@@ -119,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/">
+  <link rel="canonical" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/初识kubernate的架构体系/">
 
 
 
 
 
-  <title>一个框架，四个原则 | 孔德聚的博客</title>
+  <title>初识Kubernetes | 孔德聚的博客</title>
   
 
 
@@ -284,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/系统思维/10x程序员工作法/10x程序员工作法/">
+    <link itemprop="mainEntityOfPage" href="https://dechykong.github.io/技术技能/全面拥抱kubernetes/初识kubernate的架构体系/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dechy">
@@ -301,7 +305,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一个框架，四个原则</h1>
+          <h1 class="post-title" itemprop="name headline">初识Kubernetes</h1>
         
 
         <div class="post-meta">
@@ -313,8 +317,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-21T00:53:17+08:00">
-                2019-07-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-03T19:04:08+08:00">
+                2019-08-03
               </time>
             
 
@@ -329,8 +333,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-07-22T23:05:28+08:00">
-                2019-07-22
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-04T15:36:21+08:00">
+                2019-08-04
               </time>
             
           </span>
@@ -348,8 +352,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/" itemprop="url" rel="index">
-                    <span itemprop="name">系统思维</span>
+                  <a href="/categories/技术技能/" itemprop="url" rel="index">
+                    <span itemprop="name">技术技能</span>
                   </a>
                 </span>
 
@@ -359,8 +363,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/系统思维/10x程序员工作法/" itemprop="url" rel="index">
-                    <span itemprop="name">10x程序员工作法</span>
+                  <a href="/categories/技术技能/全面拥抱kubernetes/" itemprop="url" rel="index">
+                    <span itemprop="name">全面拥抱kubernetes</span>
                   </a>
                 </span>
 
@@ -377,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/系统思维/10x程序员工作法/10x程序员工作法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/系统思维/10x程序员工作法/10x程序员工作法/" itemprop="commentCount"></span>
+                <a href="/技术技能/全面拥抱kubernetes/初识kubernate的架构体系/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/技术技能/全面拥抱kubernetes/初识kubernate的架构体系/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +409,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  183
+                  1.4k
                 </span>
               
 
@@ -430,20 +434,47 @@
       
 
       
-        <h1 id="一个思考框架"><a href="#一个思考框架" class="headerlink" title="一个思考框架"></a>一个思考框架</h1><ul>
-<li>Where  are we?            →  现状</li>
-<li>Where are we going? → 目标</li>
-<li>How can we get there? → 实现路径</li>
+        <p>一个正在运行的 Linux 容器，其实可以被“一分为二”地看待：</p>
+<ul>
+<li>一组联合挂载在 /var/lib/docker/aufs/mnt 上的 rootfs，这一部分我们称为“容器镜像”（Container Image），是容器的静态视图；</li>
+<li>一个由 Namespace+Cgroups 构成的隔离环境，这一部分我们称为“容器运行时”（Container Runtime），是容器的动态视图。</li>
 </ul>
-<p>以上三个问题，能够帮你理清楚你即将要做的事情。同样，如果有人能够清晰地回答以上三个问题，也就说明他对要做的事情有着清晰的认识。</p>
-<h1 id="四个思考原则"><a href="#四个思考原则" class="headerlink" title="四个思考原则"></a>四个思考原则</h1><ul>
-<li>以终为始 ，确定好真实目标。</li>
-<li>任务分解，找到实施路径。</li>
-<li>沟通反馈，解决与人打交道出现的问题。</li>
-<li>自动化，解决与机器打交道出现的问题。</li>
+<p>从一个开发者和单一的容器镜像，到无数开发者和庞大的容器集群，容器技术实现了从“容器”到“容器云”的飞跃，标志着它真正得到了市场和生态的认可。</p>
+<p><strong>而能够定义容器组织和管理规范的“容器编排”技术，则当仁不让地坐上了容器技术领域的“头把交椅”。</strong></p>
+<h1 id="Kubernetes的技术起源"><a href="#Kubernetes的技术起源" class="headerlink" title="Kubernetes的技术起源"></a>Kubernetes的技术起源</h1><p>Kubernete技术理论基础得益于谷歌的Borg系统。Borg 系统，一直以来都被誉为 Google 公司内部最强大的“秘密武器”。虽然略显夸张，但这个说法倒不算是吹牛。</p>
+<p>因为，Borg 要承担的责任，是承载 Google 公司整个基础设施的核心依赖。在 Google 公司已经公开发表的基础设施体系论文中，Borg 项目当仁不让地位居整个基础设施技术栈的最底层。</p>
+<p><img src="/images/15648465571715.jpg" alt></p>
+<p>所以，Kubernetes 项目从一开始就比较幸运地站上了一个他人难以企及的高度。</p>
+<h1 id="Kubernetes的全局架构"><a href="#Kubernetes的全局架构" class="headerlink" title="Kubernetes的全局架构"></a>Kubernetes的全局架构</h1><p><img src="/images/15648471736286.jpg" alt></p>
+<h2 id="控制节点-Master"><a href="#控制节点-Master" class="headerlink" title="控制节点(Master)"></a>控制节点(Master)</h2><p>即Master 节点，由三个紧密协作的独立组件组合而成。</p>
+<ul>
+<li>kube-apiserver：负责 API 服务；</li>
+<li>kube-scheduler：负责调度；</li>
+<li>kube-controller-manager：负责容器编排。<br>而整个集群的持久化数据，则由 kube-apiserver 处理后保存在 Etcd 中。</li>
 </ul>
-<hr>
-<p>总结：<br>一个框架，四个原则是对10倍程序员工作法的高度抽象。后面的文章会对这些内容进行补充。</p>
+<h2 id="计算节点（note）"><a href="#计算节点（note）" class="headerlink" title="计算节点（note）"></a>计算节点（note）</h2><p>计算节点上最核心的组件，就是kubelet。kubelet通过接口和规划跟其他组件打交道。</p>
+<p><strong>(1) kubelet 同容器运行时打交道</strong>。交互所依赖的，是一个称作 CRI（Container Runtime Interface）的远程调用接口，这个接口定义了容器运行时的各项核心操作，比如：启动一个容器需要的所有参数。<strong>也就是说，只要这个容器运行时能够运行标准的容器镜像，它就可以通过实现CRI接入到Kubernetes项目当中。</strong></p>
+<p>   而<strong>Container Runtime</strong>容器运行时，则通过 OCI 这个容器运行时规范同底层的 Linux 操作系统进行交互，即：把 CRI 请求翻译成对 Linux 操作系统的调用（操作 Linux Namespace 和 Cgroups 等）。</p>
+<p><strong>(2) kubelet 通过 gRPC 协议和 Device Plugin 的插件进行交互。</strong>这个插件，是 Kubernetes 项目用来管理 GPU 等宿主机物理设备的主要组件，也是基于 Kubernetes 项目进行机器学习训练、高性能作业支持等工作必须关注的功能。</p>
+<p><strong>(3) 调用网络插件Networking和存储插件Device Plugin为容器配置网络和持久化存储。</strong>这两个插件与 kubelet 进行交互的接口，分别是 CNI（Container Networking Interface）和 CSI（Container Storage Interface）。</p>
+<h1 id="Kubernetes核心功能全景"><a href="#Kubernetes核心功能全景" class="headerlink" title="Kubernetes核心功能全景"></a>Kubernetes核心功能全景</h1><p>Kubernetes要解决的是什么问题？<br>实际上，这个问题到目前为止都没有固定的答案。因为在不同的发展阶段，Kubernetes 需要着重解决的问题是不同的。</p>
+<p>可以从两个方面来回答：</p>
+<ul>
+<li>处理集群中的各种任务之间存在着各种各样的关系。</li>
+<li>处理应用运行形态的问题。</li>
+</ul>
+<p>我们可以通过下面这幅图，按照这幅图的线索，来探索下Kubernetes的功能严禁路线。<br> <img src="/images/15648765778975.jpg" alt></p>
+<h2 id="处理应用之间的关系"><a href="#处理应用之间的关系" class="headerlink" title="处理应用之间的关系"></a>处理应用之间的关系</h2><ul>
+<li>首先遇到了容器间“紧密协作”关系的难题，于是就扩展到了 Pod；Pod之间可共享网络和存储等资源。</li>
+<li>有了 Pod 之后，我们希望能一次启动多个应用的实例，这样就需要 Deployment 这个 Pod 的多实例管理器；</li>
+<li>而有了这样一组相同的 Pod 后，我们又需要通过一个固定的 IP 地址和端口以负载均衡的方式访问它，于是就有了 Service。</li>
+<li>不同 Pod 之间不仅有“访问关系”，还要求在发起时加上授权信息。于是有了Secret。它其实是一个保存在 Etcd 里的键值对数据。这样，你把 Credential 信息以 Secret 的方式存在 Etcd 里，Kubernetes 就会在你指定的 Pod（比如，Web 应用的 Pod）启动时，自动把 Secret 里的数据以 Volume 的方式挂载到容器里。</li>
+</ul>
+<h2 id="处理应用的运行形态"><a href="#处理应用的运行形态" class="headerlink" title="处理应用的运行形态"></a>处理应用的运行形态</h2><ul>
+<li>除了应用与应用之间的关系外，应用运行的形态是影响“如何容器化这个应用”的重要因素。为此，Kubernetes 定义了新的、基于 Pod 改进后的对象，这些称为<strong>编排对象</strong>。比如 Job，用来描述一次性运行的 Pod（比如，大数据任务）；再比如 DaemonSet，用来描述每个宿主机上必须且只能运行一个副本的守护进程服务；又比如 CronJob，则用于描述定时任务等等。</li>
+<li>有了编排对象之后，还需要为这些编排对象提供一些服务，于是就有了<strong>服务对象</strong>。比如 Service、Secret、Horizontal Pod Autoscaler（自动水平扩展器）等。这些对象，会负责具体的平台级功能。</li>
+</ul>
+<p><strong>这种使用方法，就是所谓的“声明式 API”。这种 API 对应的“编排对象”和“服务对象”，都是 Kubernetes 项目中的 API 对象（API Object）。</strong></p>
 
       
     </div>
@@ -483,15 +514,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/技术技能/全面拥抱kubernetes/Docker的安装和配置/" rel="next" title="Docker的安装和配置">
+                <i class="fa fa-chevron-left"></i> Docker的安装和配置
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/技术技能/Linux运维/SourceCRT使用sftp上传下载文件/" rel="prev" title="SourceCRT使用sftp上传下载文件">
-                SourceCRT使用sftp上传下载文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -628,7 +659,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一个思考框架"><span class="nav-number">1.</span> <span class="nav-text">一个思考框架</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四个思考原则"><span class="nav-number">2.</span> <span class="nav-text">四个思考原则</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes的技术起源"><span class="nav-number">1.</span> <span class="nav-text">Kubernetes的技术起源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes的全局架构"><span class="nav-number">2.</span> <span class="nav-text">Kubernetes的全局架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#控制节点-Master"><span class="nav-number">2.1.</span> <span class="nav-text">控制节点(Master)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算节点（note）"><span class="nav-number">2.2.</span> <span class="nav-text">计算节点（note）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes核心功能全景"><span class="nav-number">3.</span> <span class="nav-text">Kubernetes核心功能全景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#处理应用之间的关系"><span class="nav-number">3.1.</span> <span class="nav-text">处理应用之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理应用的运行形态"><span class="nav-number">3.2.</span> <span class="nav-text">处理应用的运行形态</span></a></li></ol></li></ol></div>
             
 
           </div>
