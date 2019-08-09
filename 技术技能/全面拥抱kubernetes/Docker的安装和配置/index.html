@@ -88,7 +88,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://dechykong.github.io/images/15648176535161.jpg">
 <meta property="og:image" content="https://dechykong.github.io/images/15648194363608.jpg">
-<meta property="og:updated_time" content="2019-08-03T14:55:30.281Z">
+<meta property="og:updated_time" content="2019-08-08T01:17:28.439Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker的安装和配置">
 <meta name="twitter:description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-03T22:55:30+08:00">
-                2019-08-03
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-08T09:17:28+08:00">
+                2019-08-08
               </time>
             
           </span>
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  412
+                  441
                 </span>
               
 
@@ -438,6 +438,7 @@
 
 <h2 id="安装docker-ce"><a href="#安装docker-ce" class="headerlink" title="安装docker-ce"></a>安装docker-ce</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">yum-config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum install -y docker-ce</span><br></pre></td></tr></table></figure>
 
+<p>如果想要了解更多，例如安装特定的版本，可以参考：<a href="https://blog.csdn.net/CSDN_duomaomao/article/details/78997138。" target="_blank" rel="noopener">https://blog.csdn.net/CSDN_duomaomao/article/details/78997138。</a></p>
 <h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 
 <h1 id="相关配置（可忽略）"><a href="#相关配置（可忽略）" class="headerlink" title="相关配置（可忽略）"></a>相关配置（可忽略）</h1><h2 id="禁用SElinux"><a href="#禁用SElinux" class="headerlink" title="禁用SElinux"></a>禁用SElinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &apos;s/SELINUX=enforcing/SELINUX=disabled/g&apos; /etc/selinux/config</span><br></pre></td></tr></table></figure>
