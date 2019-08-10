@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
+<meta name="description" content="安装docker的时候，我们最终都是想安装kubernetes。而安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。 12345678910cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/yum.repos.d/kubernetes.r">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker的安装和配置">
 <meta property="og:url" content="https://dechykong.github.io/技术技能/全面拥抱kubernetes/Docker的安装和配置/index.html">
 <meta property="og:site_name" content="孔德聚的博客">
-<meta property="og:description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
+<meta property="og:description" content="安装docker的时候，我们最终都是想安装kubernetes。而安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。 12345678910cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/yum.repos.d/kubernetes.r">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://dechykong.github.io/images/15648176535161.jpg">
 <meta property="og:image" content="https://dechykong.github.io/images/15648194363608.jpg">
-<meta property="og:updated_time" content="2019-08-08T01:17:28.439Z">
+<meta property="og:updated_time" content="2019-08-10T16:58:05.374Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker的安装和配置">
-<meta name="twitter:description" content="Docker的安装一般来说，安装docker只需要下面两步即可。在执行命令之前，先切花到root用户。 12$ sudo passwd       #修改密码$ su - root         #切换到root用户  安装docker-ce123yum install -y yum-utils device-mapper-persistent-data lvm2yum-config-manag">
+<meta name="twitter:description" content="安装docker的时候，我们最终都是想安装kubernetes。而安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。 12345678910cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/yum.repos.d/kubernetes.r">
 <meta name="twitter:image" content="https://dechykong.github.io/images/15648176535161.jpg">
 
 
@@ -332,8 +332,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-08-08T09:17:28+08:00">
-                2019-08-08
+              <time title="Post modified" itemprop="dateModified" datetime="2019-08-11T00:58:05+08:00">
+                2019-08-11
               </time>
             
           </span>
@@ -408,7 +408,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  441
+                  620
                 </span>
               
 
@@ -433,24 +433,18 @@
       
 
       
-        <h1 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h1><p>一般来说，安装docker只需要下面两步即可。<br>在执行命令之前，先切花到root用户。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo passwd       #修改密码</span><br><span class="line">$ su - root         #切换到root用户</span><br></pre></td></tr></table></figure>
+        <p>安装docker的时候，我们最终都是想安装kubernetes。而安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo</span><br><span class="line">[kubernetes]</span><br><span class="line">name=Kubernetes</span><br><span class="line">baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br><span class="line">repo_gpgcheck=0</span><br><span class="line">gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg</span><br><span class="line">       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 
-<h2 id="安装docker-ce"><a href="#安装docker-ce" class="headerlink" title="安装docker-ce"></a>安装docker-ce</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">yum-config-manager --add-repo https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo</span><br><span class="line">yum install -y docker-ce</span><br></pre></td></tr></table></figure>
+<h1 id="Docker的安装"><a href="#Docker的安装" class="headerlink" title="Docker的安装"></a>Docker的安装</h1><p>在执行命令之前，先切换到root用户。</p>
+<h2 id="安装docker-ce"><a href="#安装docker-ce" class="headerlink" title="安装docker-ce"></a>安装docker-ce</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 卸载旧版本Docker软件</span><br><span class="line">sudo yum remove docker \</span><br><span class="line">              docker-client \</span><br><span class="line">              docker-client-latest \</span><br><span class="line">              docker-common \</span><br><span class="line">              docker-latest \</span><br><span class="line">              docker-latest-logrotate \</span><br><span class="line">              docker-logrotate \</span><br><span class="line">              docker-selinux \</span><br><span class="line">              docker-engine-selinux \</span><br><span class="line">              docker-engine \</span><br><span class="line">              container*</span><br><span class="line"># 定义安装版本</span><br><span class="line">export docker_version=18.06.3</span><br><span class="line"># step 1: 安装必要的一些系统工具</span><br><span class="line">sudo yum update -y;</span><br><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data \</span><br><span class="line">    lvm2 bash-completion;</span><br><span class="line"># Step 2: 添加软件源信息</span><br><span class="line">sudo yum-config-manager --add-repo \</span><br><span class="line">    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo;</span><br><span class="line"># Step 3: 更新并安装 Docker-CE</span><br><span class="line">sudo yum makecache all;</span><br><span class="line">version=$(yum list docker-ce.x86_64 --showduplicates | sort -r|grep $&#123;docker_version&#125;|awk &apos;&#123;print $2&#125;&apos;);</span><br><span class="line">sudo yum -y install --setopt=obsoletes=0 docker-ce-$&#123;version&#125; docker-ce-selinux-$&#123;version&#125;;</span><br><span class="line"># 如果已经安装高版本Docker,可进行降级安装(可选)</span><br><span class="line">yum downgrade --setopt=obsoletes=0 -y docker-ce-$&#123;version&#125; docker-ce-selinux-$&#123;version&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>如果想要了解更多，例如安装特定的版本，可以参考：<a href="https://blog.csdn.net/CSDN_duomaomao/article/details/78997138。" target="_blank" rel="noopener">https://blog.csdn.net/CSDN_duomaomao/article/details/78997138。</a></p>
-<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+<h2 id="启动docker"><a href="#启动docker" class="headerlink" title="启动docker"></a>启动docker</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 设置开机启动</span><br><span class="line">systemctl enable docker</span><br><span class="line"># 启动docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
 
-<h1 id="相关配置（可忽略）"><a href="#相关配置（可忽略）" class="headerlink" title="相关配置（可忽略）"></a>相关配置（可忽略）</h1><h2 id="禁用SElinux"><a href="#禁用SElinux" class="headerlink" title="禁用SElinux"></a>禁用SElinux</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &apos;s/SELINUX=enforcing/SELINUX=disabled/g&apos; /etc/selinux/config</span><br></pre></td></tr></table></figure>
-
-<h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service &amp;&amp; systemctl disable firewalld.service</span><br></pre></td></tr></table></figure>
-
-<h2 id="内核优化"><a href="#内核优化" class="headerlink" title="内核优化"></a>内核优化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cat &gt;&gt; /etc/sysctl.conf&lt;&lt;EOF</span><br><span class="line">net.ipv4.ip_forward=1</span><br><span class="line">net.bridge.bridge-nf-call-iptables=1</span><br><span class="line">net.bridge.bridge-nf-call-ip6tables=1</span><br><span class="line">net.ipv4.neigh.default.gc_thresh1=4096</span><br><span class="line">net.ipv4.neigh.default.gc_thresh2=6144</span><br><span class="line">net.ipv4.neigh.default.gc_thresh3=8192</span><br><span class="line">EOF</span><br><span class="line">sysctl -p</span><br></pre></td></tr></table></figure>
-
-<h2 id="配置证书"><a href="#配置证书" class="headerlink" title="配置证书"></a>配置证书</h2><p>公司内网仓库需要配置证书才允许访问。</p>
+<h1 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置"></a>相关配置</h1><h2 id="配置证书（可选"><a href="#配置证书（可选" class="headerlink" title="配置证书（可选)"></a>配置证书（可选)</h2><p>公司内网仓库需要配置证书才允许访问。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker/certs.d/e-registry.yfb.sunline.cn</span><br><span class="line">curl -L http://e-proxy.yfb.sunline.cn/repos/registry/e-ca.crt &gt; /etc/docker/certs.d/e-registry.yfb.sunline.cn/ca.crt</span><br></pre></td></tr></table></figure>
 
-<h2 id="docker的deamon配置"><a href="#docker的deamon配置" class="headerlink" title="docker的deamon配置"></a>docker的deamon配置</h2><p>配置镜像仓库的拉取地址等相关信息。</p>
+<h2 id="docker的deamon配置"><a href="#docker的deamon配置" class="headerlink" title="docker的deamon配置"></a>docker的deamon配置</h2><p>配置镜像仓库的拉取地址等相关信息。镜像仓库中有公司的仓库：<a href="https://e-registry.yfb.sunline.cn，需要改为自己公司的仓库地址，或者去掉。" target="_blank" rel="noopener">https://e-registry.yfb.sunline.cn，需要改为自己公司的仓库地址，或者去掉。</a></p>
 <p>创建文件：/etc/docker/daemon.json</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;https://c6s6uk2t.mirror.aliyuncs.com&quot;,&quot;https://e-registry.yfb.sunline.cn&quot;],</span><br><span class="line">  &quot;insecure-registries&quot; : [&quot;e-registry.yfb.sunline.cn&quot;],</span><br><span class="line">  &quot;max-concurrent-downloads&quot;: 3,</span><br><span class="line">  &quot;max-concurrent-uploads&quot;: 5,</span><br><span class="line">  &quot;storage-driver&quot;: &quot;overlay2&quot;,</span><br><span class="line">  &quot;storage-opts&quot;: [&quot;overlay2.override_kernel_check=true&quot;],</span><br><span class="line">  &quot;log-driver&quot;: &quot;json-file&quot;,</span><br><span class="line">  &quot;log-opts&quot;: &#123;</span><br><span class="line">    &quot;max-size&quot;: &quot;100m&quot;,</span><br><span class="line">    &quot;max-file&quot;: &quot;3&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -643,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker的安装"><span class="nav-number">1.</span> <span class="nav-text">Docker的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装docker-ce"><span class="nav-number">1.1.</span> <span class="nav-text">安装docker-ce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动docker"><span class="nav-number">1.2.</span> <span class="nav-text">启动docker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关配置（可忽略）"><span class="nav-number">2.</span> <span class="nav-text">相关配置（可忽略）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#禁用SElinux"><span class="nav-number">2.1.</span> <span class="nav-text">禁用SElinux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭防火墙"><span class="nav-number">2.2.</span> <span class="nav-text">关闭防火墙</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内核优化"><span class="nav-number">2.3.</span> <span class="nav-text">内核优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置证书"><span class="nav-number">2.4.</span> <span class="nav-text">配置证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker的deamon配置"><span class="nav-number">2.5.</span> <span class="nav-text">docker的deamon配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行nginx容器，查看是否安装正确"><span class="nav-number">3.</span> <span class="nav-text">运行nginx容器，查看是否安装正确</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker的安装"><span class="nav-number">1.</span> <span class="nav-text">Docker的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装docker-ce"><span class="nav-number">1.1.</span> <span class="nav-text">安装docker-ce</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动docker"><span class="nav-number">1.2.</span> <span class="nav-text">启动docker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关配置"><span class="nav-number">2.</span> <span class="nav-text">相关配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置证书（可选"><span class="nav-number">2.1.</span> <span class="nav-text">配置证书（可选)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker的deamon配置"><span class="nav-number">2.2.</span> <span class="nav-text">docker的deamon配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行nginx容器，查看是否安装正确"><span class="nav-number">3.</span> <span class="nav-text">运行nginx容器，查看是否安装正确</span></a></li></ol></div>
             
 
           </div>
@@ -684,7 +678,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.6k</span>
+    <span title="Site words total count">15.8k</span>
   
 </div>
 
