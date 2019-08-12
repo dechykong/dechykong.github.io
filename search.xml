@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[停止、删除所有的docker容器和镜像]]></title>
+    <url>%2F%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD%2F%E5%85%A8%E9%9D%A2%E6%8B%A5%E6%8A%B1kubernetes%2F%E5%81%9C%E6%AD%A2%E3%80%81%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E7%9A%84docker%E5%AE%B9%E5%99%A8%E5%92%8C%E9%95%9C%E5%83%8F%2F</url>
+    <content type="text"><![CDATA[转载自:https://colobu.com/2018/05/15/Stop-and-remove-all-docker-containers-and-images/。在做docker练习的时候，经常会遇到内存不够，需要清除容器和镜像的场景。下面是常用的命令： 列出所有的容器 ID1docker ps -aq 停止所有的容器1docker stop $(docker ps -aq) 删除所有的容器1docker rm $(docker ps -aq) 删除所有停止的容器 1docker container prune -f: 删除所有的镜像1docker rmi $(docker images -q) 或者使用： 1docker image prune --force --all 删除所有不使用的镜像： 1docker image prune -f -a]]></content>
+      <categories>
+        <category>技术技能</category>
+        <category>全面拥抱kubernetes</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[阿里云 kubernetes yum 仓库镜像]]></title>
     <url>%2F%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD%2F%E5%85%A8%E9%9D%A2%E6%8B%A5%E6%8A%B1kubernetes%2F%E9%98%BF%E9%87%8C%E4%BA%91%20kubernetes%20yum%20%E4%BB%93%E5%BA%93%E9%95%9C%E5%83%8F%2F</url>
     <content type="text"><![CDATA[安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。 12345678910cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo[kubernetes]name=Kubernetesbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64enabled=1gpgcheck=0repo_gpgcheck=0gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpgEOF]]></content>
