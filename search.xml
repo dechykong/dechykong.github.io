@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[基于Docker安装zookeeper]]></title>
+    <url>%2F%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD%2FLinux%E8%BF%90%E7%BB%B4%2F%E5%9F%BA%E4%BA%8EDocker%E5%AE%89%E8%A3%85zookeeper%2F</url>
+    <content type="text"><![CDATA[单节点安装拉取zookeeper镜像 语法：docker pull zookeeper这是拉取的最新版本的官方镜像，也可以选择其它版本的镜像。]]></content>
+      <categories>
+        <category>技术技能</category>
+        <category>Linux运维</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[沟通反馈篇]]></title>
     <url>%2F%E7%B3%BB%E7%BB%9F%E6%80%9D%E7%BB%B4%2F10x%E7%A8%8B%E5%BA%8F%E5%91%98%E5%B7%A5%E4%BD%9C%E6%B3%95%2F%E6%B2%9F%E9%80%9A%E5%8F%8D%E9%A6%88%E7%AF%87%2F</url>
     <content type="text"><![CDATA[客观事实-每个人眼中的世界就是不一样对于一个事物，人们的理解从来都不一样，这个是现实世界的客观事实。永远不要以为他人能够百分之一百理解你的想法。 神经科学的解释认知神经科学家加扎尼加博士发现，大脑接收到外界信息都是非连续的碎片，就像一张张独立的图片。大脑系统里面有一个“诠释者”，它负责将接收到的信息编造成为故事，为了让故事连贯、自圆其说，它可能会篡改事实，强加不存在的因果联系。 所以，就算是接收同样的信息，每个人的眼中的世界就是不一样的。 一个信息论视角的解释这个图中包含了几个要素： 信源（Information Source），它负责产生信息（Message）。 发送器（Transmitter），它会对信息进行某些操作，也就是对信息编码，产生信号（Signal）。 信道（Channel），它是信号传送的媒介。 接收器（Receiver），它是对信号执行发送器的逆操作，解码信号，提取出信息。 信宿（Destination），它负责接收信息。 噪声（Noise），指的是削弱信号的东西。 一个信号从发送到接收，一定会经历过层层干扰阻碍，最终还由于每个人发送时的编码和接收时的解码不同，对信息的还原程度就必然会有差别。 我们能做的，也只能是尽量减少信息的失真程度，而沟通反馈就是最好的方法工具。]]></content>
@@ -73,7 +82,7 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[Docker的安装和配置]]></title>
+    <title><![CDATA[Docker的安装和配置(Centos7)]]></title>
     <url>%2F%E6%8A%80%E6%9C%AF%E6%8A%80%E8%83%BD%2F%E5%85%A8%E9%9D%A2%E6%8B%A5%E6%8A%B1kubernetes%2FDocker%E7%9A%84%E5%AE%89%E8%A3%85%E5%92%8C%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[安装docker的时候，我们最终都是想安装kubernetes。而安装kubernetes的时候，需要安装kubelet, kubeadm等包，但k8s官网给的yum源是packages.cloud.google.com，国内访问不了，此时我们可以使用阿里云的yum仓库镜像。 12345678910cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo[kubernetes]name=Kubernetesbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64enabled=1gpgcheck=0repo_gpgcheck=0gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpgEOF Docker的安装在执行命令之前，先切换到root用户。 安装docker-ce123456789101112131415161718192021222324252627# 卸载旧版本Docker软件sudo yum remove docker \ docker-client \ docker-client-latest \ docker-common \ docker-latest \ docker-latest-logrotate \ docker-logrotate \ docker-selinux \ docker-engine-selinux \ docker-engine \ container*# 定义安装版本export docker_version=18.06.3# step 1: 安装必要的一些系统工具sudo yum update -y;sudo yum install -y yum-utils device-mapper-persistent-data \ lvm2 bash-completion;# Step 2: 添加软件源信息sudo yum-config-manager --add-repo \ http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo;# Step 3: 更新并安装 Docker-CEsudo yum makecache all;version=$(yum list docker-ce.x86_64 --showduplicates | sort -r|grep $&#123;docker_version&#125;|awk &apos;&#123;print $2&#125;&apos;);sudo yum -y install --setopt=obsoletes=0 docker-ce-$&#123;version&#125; docker-ce-selinux-$&#123;version&#125;;# 如果已经安装高版本Docker,可进行降级安装(可选)yum downgrade --setopt=obsoletes=0 -y docker-ce-$&#123;version&#125; docker-ce-selinux-$&#123;version&#125;; 启动docker1234# 设置开机启动systemctl enable docker# 启动dockersystemctl restart docker 相关配置配置证书（可选)公司内网仓库需要配置证书才允许访问。 12mkdir -p /etc/docker/certs.d/e-registry.yfb.sunline.cncurl -L http://e-proxy.yfb.sunline.cn/repos/registry/e-ca.crt &gt; /etc/docker/certs.d/e-registry.yfb.sunline.cn/ca.crt docker的deamon配置配置镜像仓库的拉取地址等相关信息。镜像仓库中有公司的仓库：https://e-registry.yfb.sunline.cn，需要改为自己公司的仓库地址，或者去掉。 创建文件：/etc/docker/daemon.json 12345678910111213&#123; &quot;registry-mirrors&quot;: [&quot;https://c6s6uk2t.mirror.aliyuncs.com&quot;,&quot;https://e-registry.yfb.sunline.cn&quot;], &quot;insecure-registries&quot; : [&quot;e-registry.yfb.sunline.cn&quot;], &quot;max-concurrent-downloads&quot;: 3, &quot;max-concurrent-uploads&quot;: 5, &quot;storage-driver&quot;: &quot;overlay2&quot;, &quot;storage-opts&quot;: [&quot;overlay2.override_kernel_check=true&quot;], &quot;log-driver&quot;: &quot;json-file&quot;, &quot;log-opts&quot;: &#123; &quot;max-size&quot;: &quot;100m&quot;, &quot;max-file&quot;: &quot;3&quot; &#125;&#125; 最后，相关配置完成后，记得重启docker 1systemctl restart docker 查看是否安装完毕： 1docker version 运行nginx容器，查看是否安装正确1docker run -d -p 8080:80 nginx 访问容器的ip+监听端口：http://172.168.1.10:8080/代表启动成功。]]></content>
       <categories>
